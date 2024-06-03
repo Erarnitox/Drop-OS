@@ -2,8 +2,8 @@
 
 set -e
 
-export PROFILENAME="sigma"
-export SYSNAME="Sigma Linux"
+export PROFILENAME="drop"
+export SYSNAME="DropOS"
 export ROOT_DIR="$(dirname -- "$(readlink -f -- "$0")")"
 export CACHE_DIR="$ROOT_DIR/cache"
 export SRC_DIR="$ROOT_DIR/src"
@@ -11,7 +11,7 @@ export REPO_DIR="$CACHE_DIR/repo"
 export APK_DIR="$SRC_DIR/apk"
 export APKTEMP_DIR="$CACHE_DIR/apk"
 export BUILD_USER="build" # User with abuild setup
-export MAX_THREADS="11"
+export MAX_THREADS="10"
 export TARGET_ARCH="$(uname -m)"
 export KERNEL_GIT="https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/"
 export KERNEL_BRANCH="v6.9.1"
@@ -26,7 +26,7 @@ export SQUASHFS_DIR="$CACHE_DIR/squashfs"
 export SQUASHFS_PATH="$CACHE_DIR/rootfs.squashfs"
 export ISO_DIR="$CACHE_DIR/iso"
 export ISO_PATH="$CACHE_DIR/$PROFILENAME-linux.iso"
-export ISO_VOLID="sigma-linux-cdrom"
+export ISO_VOLID="dropos-cdrom"
 
 echo "Config:"
 echo " - PROFILENAME: $PROFILENAME"

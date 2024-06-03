@@ -34,17 +34,17 @@ cp "$REPOS_FILE" "$SQUASHFS_DIR/etc/apk/repositories"
 
 # Overwrite package owned files
 cat <<- EOF > "$SQUASHFS_DIR/etc/issue"
-Welcome to Sigma Linux (made by rdbo)
+Welcome to DropOS 
 Kernel \r on an \m (\l)
 EOF
 
 cat <<- EOF > "$SQUASHFS_DIR/etc/motd"
-Welcome to Sigma Linux!
+Welcome to DropOS!
 
 To install the system, run the following command: setup-sigma
 
 For more information about the distribution, see:
- - https://github.com/rdbo/sigma-linux
+ - https://github.com/erarnitox/Drop-OS
  - https://wiki.alpinelinux.org
 
 EOF
@@ -85,6 +85,12 @@ EOF
 dirs="Downloads Documents Pictures Videos Music"
 for dir in $dirs; do
 	mkdir -p "$SQUASHFS_DIR/etc/skel/$dir"
+done
+
+# create project directories
+dirs="CPP Rust C Shell Python Hacking"
+for dir in $dirs; do
+	mkdir -p "$SQUASHFS_DIR/etc/skel/Projects/$dir"
 done
 
 # Copy /etc/skel to /root (allows for logging in to the desktop environment as root on live boot)

@@ -25,6 +25,15 @@ alpine-sdk
 # System
 
 ## Administration Tools
+dust
+duf
+fd
+ripgrep
+sd
+bottom
+procs
+httpie curlie
+dog
 doas openssh
 curl wget
 gpg
@@ -34,8 +43,9 @@ xfsprogs e2fsprogs btrfs-progs dosfstools ntfs-3g
 # yt-dlp
 xz zstd zip unzip
 # lighttpd
-rsync
-diffutils
+# rsync
+# diffutils
+delta
 
 ## Memory
 earlyoom zram-init
@@ -49,14 +59,14 @@ pulsemixer pulseaudio-ctl pulseaudio-utils
 easyeffects calf-lv2 lsp-plugins-lv2 mda-lv2 zam-plugins-lv2
 
 ## Bluetooth
-bluez
+# bluez
 
 ## Docs
 mandoc man-pages
 busybox-doc
 
 ## Configuration
-sigma-conf
+drop-conf
 ncurses-terminfo
 
 #--------------------------------#
@@ -67,7 +77,7 @@ ncurses-terminfo
 xwayland seatd eudev xrdb
 
 ## Fonts
-sigma-firacode-nerd sigma-vt323
+# drop-firacode-nerd drop-vt323
 font-ubuntu-nerd font-noto-all
 
 ## Desktop
@@ -78,31 +88,35 @@ waylock # screen locker
 swww # wallpaper daemon
 
 ## Terminal
-sigma-st foot
+# drop-st foot
+urxvt
 
 ## Text Editing
-vim sigma-helix
+# vim sigma-helix
+nvim
 
 ## Browser
-luakit luakit-doc
+# luakit luakit-doc
+librewolf
 
 ## Notifications
 mako
 libnotify
 
 ## Screenshot
-grim
-slurp
+# grim
+# slurp
+flameshot
 
 ## File Manager
 pcmanfm
 
 ## Office
-sc-im
-sigma-sent
-groff
-poppler poppler-utils
-zathura zathura-pdf-mupdf
+# sc-im
+# sigma-sent
+# groff
+# poppler poppler-utils
+# zathura zathura-pdf-mupdf
 # libreoffice libreoffice-gtk
 
 ## Mail
@@ -116,9 +130,9 @@ mpv
 ffmpeg
 imagemagick
 nsxiv
-# gimp
+gimp
 # inkscape
-wf-recorder
+# wf-recorder
 # shotcut
 # lmms
 
@@ -126,7 +140,7 @@ wf-recorder
 keepassxc pass
 
 ## Chat
-weechat
+# weechat
 
 ## Monitoring
 # wireshark tshark
@@ -135,15 +149,15 @@ weechat
 wl-clipboard
 wlr-randr
 dbus-x11
-sigma-wvkbd
+# drop-wvkbd
 neofetch
 lxappearance
 zenity
 
 ## Themes
-sigma-flat-remix-gtk
-adwaita-icon-theme
-papirus-icon-theme
+# drop-flat-remix-gtk
+# adwaita-icon-theme
+# papirus-icon-theme
 
 ## GL/Rendering
 mesa
@@ -162,9 +176,11 @@ mesa-vulkan-swrast
 
 ## Compilers/Interpreters
 python3
-gcc
-g++
-perl
+clang
+clang++
+# gcc
+# g++
+# perl
 # openjdk8 openjdk21
 
 ## Linkers
@@ -175,10 +191,10 @@ clang-extra-tools
 py3-lsp-server
 
 ## Build Systems
-make cmake
+ninja make cmake
 
 ## Versioning
-git
+git svn
 
 ## Debuggers
 gdb
@@ -189,17 +205,17 @@ gdb
 
 hexedit
 # aircrack-ng
-# nmap nmap-ncat
-# rustscan
-# ghidra
-# zaproxy
+nmap nmap-ncat
+rustscan
+ghidra
+zaproxy
 # mitmproxy
-# hashcat
-# john
-# hydra
-# radare2
-# exiftool
-# sqlmap
+hashcat
+john
+hydra
+radare2
+exiftool
+sqlmap
 # recon-ng
 # bettercap
 # socat

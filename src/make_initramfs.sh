@@ -18,11 +18,11 @@ mount -t devtmpfs none /dev
 mount -t proc none /proc
 mount -t sysfs none /sys
 
-if [ ! -z "\$sigmaroot" ]; then
+if [ ! -z "\$droproot" ]; then
 	# installed
 	echo "Mounting rootfs at /new_root..."
 	for i in \$(seq 1 5); do
-		rootdev="\$(findfs "\$sigmaroot" | head -n 1)"
+		rootdev="\$(findfs "\$droproot" | head -n 1)"
 		if [ -z "\$rootdev" ] || [ ! -b "\$rootdev" ]; then
 			echo "Failed to find root device, trying again..."
 			sleep 1
@@ -40,13 +40,13 @@ if [ ! -z "\$sigmaroot" ]; then
 
 	if blkid "\$rootdev" | grep 'TYPE="crypto_LUKS"' > /dev/null; then
 		mkdir -p /run
-		cryptsetup luksOpen "\$rootdev" cryptsigma
-		if [ ! -b /dev/mapper/cryptsigma ]; then
+		cryptsetup luksOpen "\$rootdev" cryptdrop
+		if [ ! -b /dev/mapper/cryptdrop ]; then
 			echo "Failed to decrypt root device, spawning troubleshoot shell..."
 			exec /bin/sh
 		fi
 
-		mount /dev/mapper/cryptsigma /new_root
+		mount /dev/mapper/cryptdrop /new_root
 	else
 		mount "\$rootdev" /new_root
 	fi

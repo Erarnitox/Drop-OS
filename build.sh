@@ -7,7 +7,7 @@ if [ "$(id -u)" != "0" ]; then
 	exit 1
 fi
 
-echo "[*] Sigma Linux Builder"
+echo "[*] DropOS Builder"
 
 echo "[*] Running config..."
 . ./src/config.sh
